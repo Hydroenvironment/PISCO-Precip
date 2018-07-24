@@ -1,2 +1,2 @@
 # PISCO-Precip
-Tratamiento de datos PISCO
+Tratamiento de datos PISCO-SENAMHI
