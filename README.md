@@ -1,2 +1,2 @@
-# PISCO-Precipitaci-n
+# PISCO-Precip
 Tratamiento de datos PISCO
