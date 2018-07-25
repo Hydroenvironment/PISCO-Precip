@@ -1,12 +1,12 @@
-setwd("D:/juliohydraulics/PISCO_treatment")# Ruteamos la carpeta de trabajo 
+setwd("D:/juliohydraulics/PISCO_treatment") # Ruteamos la carpeta de trabajo 
 # Para descargar datos PISCO (.nc) dirigirse a: http://www.senamhi.gob.pe/?p=observacion-de-inundaciones
 # Dar click en la parte que menciona "Datos SONICS (DESCARGAS)"
 # La versión 2.0 tiene una carpeta llamada: PISCO_v2.0 - ftp://ftp.senamhi.gob.pe/PISCO_v2.0/
 rm(list = ls())
-install.packages("raster")#Instalar el paquete 
-install.packages("ncdf4")#Instalar el paquete
-library(raster)#cargar el paquete
-library(ncdf4)#cargar el paquete
+install.packages("raster") #Instalar el paquete 
+install.packages("ncdf4") #Instalar el paquete
+library(raster) #cargar el paquete
+library(ncdf4) #cargar el paquete
 ##Comenzamos con la lectura de un archivo de dos columnas "longitud" y "latitud" (coordenadas geográficas)
 long_lat <- read.csv("long_lat.csv", header = T)
 ### Incluimos a nuestro código el archivo *.nc de PISCO
