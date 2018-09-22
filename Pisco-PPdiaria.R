@@ -3,14 +3,14 @@ library(ggplot2)
 library(ncdf4)
 library(maptools)
 
-setwd("C:/Users/USER/Desktop/MSC/DATOS")     ## Ubicaci?n de la carpeta donde est?n los archivos *.tif o el *.nc
+setwd("C:/Users/USER/Desktop/DATOS")     ## Ubicación de la carpeta donde est?n los archivos *.tif o el *.nc
 ts = seq(as.Date("1981-01-01"),as.Date("2016-12-31"),by = "day")      ## Secuencia de fechas (a?o%-mes%-dia%), puede cambiar "month" por "day" o "year"
 st = stack(list.files(pattern=".tif"))                                ## Si son *.tif
-nc = brick("C:/Users/USER/Desktop/MSC/DATOS/LLUVIA/PISCO V2.0/PISCOpd.nc")## Si es *.nc
+nc = brick("C:/Users/USER/Desktop/DATOS/LLUVIA/PISCO V2.0/PISCOpd.nc")## Si es *.nc
 
 ########################################################################## Caso Shapefile
 
-pt = shapefile("C:/Users/USER/Desktop/MSC/BASE GIS/SHAPEFILES/Estaciones_Catchira_GEO.shp")                          ## Si tiene puntos como shp
+pt = shapefile("C:/Users/USER/Desktop/BASE GIS/SHAPEFILES/Estaciones_Catchira_GEO.shp")                          ## Si tiene puntos como shp
 ext = extract(nc, pt)                                                   ## Extract, para sacar los puntos
 plot(ext[2,],type = "l")
 df = data.frame(ts,ext[5,])                                             ## El 2 lo puede cambiar por el n?mero de punto que quiere(si es un s?lo punto tambi?n)
@@ -23,7 +23,7 @@ xy = cbind(-72.93199135377485,  -13.881556230479553)                            
 ext = extract(nc, xy)                                                   ## Extraer s?lo un punto   (nc o tif)   
 
 #-------------------------------------------------------------------------------------------------------------------#
-write.csv(ext,"C:/Users/USER/Desktop/MSC/DATOS/LLUVIA/PISCO V2.0/estacionX.csv")   ## Cambia la direcci?n para guardar
+write.csv(ext,"C:/Users/USER/Desktop/DATOS/LLUVIA/PISCO V2.0/estacionX.csv")   ## Cambia la direcci?n para guardar
 
 ##########################################################################
 ##########################################################################
